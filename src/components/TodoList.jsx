@@ -1,15 +1,25 @@
 import React from "react"
 import TodoItem from "./TodoItem"
-import { getTodos, getUser } from "@/lib/data"
+
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/todos", {
+    next: { revalidate: 3600 },
+  })
+
+  if (!res.ok) {
+    throw new Error("Something went wrong")
+  }
+
+  return res.json()
+}
 
 const TodoList = async ({}) => {
-  //NEED TO IMPLEMENT USERID
-  const todos = await getTodos(1)
+  const todos = await getData()
 
   return (
     <div className="flex flex-col p-5 justify-between gap-2">
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} />
+        <TodoItem key={todo._id} todo={todo} />
       ))}
     </div>
   )

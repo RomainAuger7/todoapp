@@ -2,6 +2,7 @@
 import { revalidatePath } from "next/cache"
 import { Todo } from "./models"
 import { connecttoDb } from "./utils"
+import { signIn, signOut } from "./auth"
 
 export const addTodo = async (formData) => {
   console.log(formData)
@@ -34,4 +35,16 @@ export const deleteTodo = async (id) => {
     console.log(err)
     return { error: "Something went wrong ! " }
   }
+}
+
+export const handleGithubLogin = async () => {
+  await signIn("github")
+}
+
+export const handleGoogleLogin = async () => {
+  await signIn("google")
+}
+
+export const handleLogout = async () => {
+  await signOut()
 }
