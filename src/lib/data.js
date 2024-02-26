@@ -12,10 +12,10 @@ export const getTodos = async (id) => {
   }
 }
 
-export const getUser = async (id) => {
+export const getUser = async (email) => {
   try {
     connecttoDb()
-    const user = await User.findById(id)
+    const user = await User.find({ email: email })
     return user
   } catch (err) {
     console.log(err)

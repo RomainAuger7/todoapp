@@ -2,13 +2,16 @@
 import { revalidatePath } from "next/cache"
 import { Todo } from "./models"
 import { connecttoDb } from "./utils"
-import { signIn, signOut } from "./auth"
+import { auth, signIn, signOut } from "./auth"
+import { getUser } from "./data"
 
 export const addTodo = async (formData) => {
-  console.log(formData)
+  //Get user
+  const session = await auth()
+  const user = await getUser(session.user.email)
+  const userId = user[0]._id
 
   const { content } = Object.fromEntries(formData)
-  const userId = 1
 
   try {
     connecttoDb()

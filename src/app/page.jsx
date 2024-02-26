@@ -35,7 +35,7 @@ const TodoApp = async () => {
       {session && (
         <div>
           <TodoForm />
-          <TodoList />
+          <TodoList session={session} />
         </div>
       )}
     </div>
