@@ -31,7 +31,7 @@ export const addTodo = async (formData) => {
 export const deleteTodo = async (id) => {
   try {
     connecttoDb()
-    await Todo.findByIdAndDelete(id)
+    await Todo.findOneAndDelete({ _id: id })
     revalidatePath("/")
     console.log("Deleted from database")
   } catch (err) {
