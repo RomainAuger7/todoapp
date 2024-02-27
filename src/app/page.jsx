@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 import {
   handleGithubLogin,
   handleGoogleLogin,
+  handleKakaoLogin,
   handleLogout,
-  handleNaverLogin,
 } from "@/lib/actions"
 import { auth } from "@/lib/auth"
 import React from "react"
@@ -40,8 +40,8 @@ const TodoApp = async () => {
             <form action={handleGoogleLogin}>
               <Button variant="outline">Login with Google</Button>
             </form>
-            <form action={handleNaverLogin}>
-              <Button className="text-white bg-naver">Login with Naver</Button>
+            <form action={handleKakaoLogin}>
+              <Button>Login with Kakao</Button>
             </form>
           </div>
         </div>

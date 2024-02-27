@@ -48,8 +48,8 @@ export const handleGoogleLogin = async () => {
   await signIn("google")
 }
 
-export const handleNaverLogin = async () => {
-  await signIn("naver")
+export const handleKakaoLogin = async () => {
+  await signIn("kakao")
 }
 
 export const handleLogout = async () => {
