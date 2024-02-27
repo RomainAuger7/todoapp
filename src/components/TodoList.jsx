@@ -14,6 +14,7 @@ const getData = async () => {
 
   return res.json()
 }
+
 const TodoList = async ({ session }) => {
   const user = await getUser(session.user.email)
   const activeUserId = user[0]._id
@@ -24,7 +25,7 @@ const TodoList = async ({ session }) => {
   )
 
   return (
-    <div className="flex flex-col p-5 justify-between gap-2">
+    <div className="flex flex-col p-5 justify-between gap-2.5">
       {displayTodos.map((todo) => (
         <TodoItem key={todo._id} todo={todo} />
       ))}

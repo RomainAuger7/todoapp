@@ -48,6 +48,10 @@ export const handleGoogleLogin = async () => {
   await signIn("google")
 }
 
+export const handleNaverLogin = async () => {
+  await signIn("naver")
+}
+
 export const handleLogout = async () => {
   await signOut()
 }
