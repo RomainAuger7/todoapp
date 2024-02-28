@@ -8,46 +8,57 @@ import {
   handleLogout,
 } from "@/lib/actions"
 import { auth } from "@/lib/auth"
+import Image from "next/image"
 import React from "react"
 
 const TodoApp = async () => {
   const session = await auth()
 
   return (
-    <div className="min-h-lvh flex flex-col items-center justify-center bg-slate-600 font-mono">
-      <div className="flex flex-row items-center mb-4">
-        <h1 className="text-4xl font-bold text-primary rounded-xl p-5">
-          WhatToDoToday?
-        </h1>
-        {session && (
-          <form action={handleLogout}>
-            <Button size="sm" variant="outline">
-              Logout
-            </Button>
-          </form>
-        )}
-      </div>
+    <div className="min-h-lvh flex flex-col items-center justify-center bg-purple-100 font-mono gap-10">
+      <h1 className="text-4xl font-bold text-primary outline romainauger7/holy-music outline-none bg-black rounded-xl p-5">
+        WhatToDoToday?
+      </h1>
 
       {(!session && (
-        <div className="flex flex-col items-center">
-          <p className="text-lg text-secondary-foreground bg-primary rounded-2xl p-1">
-            Please log in to start planning your schedule !
+        <div className="flex flex-col items-center gap-5">
+          <p className="text-lg text-secondary-foreground bg-destructive-foreground outline rounded-lg p-1">
+            Please log in using the following to start planning your schedule !
           </p>
           <div className="flex flex-row gap-5 mt-5">
             <form action={handleGithubLogin}>
-              <Button variant="secondary">Login with Github</Button>
+              <Button
+                className="flex flex-row gap-2 font-semibold"
+                variant="secondary"
+              >
+                <Image src={"/github-mark.png"} width={25} height={25} />
+                Github
+              </Button>
             </form>
             <form action={handleGoogleLogin}>
-              <Button variant="outline">Login with Google</Button>
+              <Button
+                className="flex flex-row gap-2 font-semibold"
+                variant="outline"
+              >
+                <Image src={"/gmail.png"} width={25} height={25} />
+                Google
+              </Button>
             </form>
             <form action={handleKakaoLogin}>
-              <Button>Login with Kakao</Button>
+              <Button className="flex flex-row gap-2 font-semibold">
+                <Image
+                  src={"/logo-kakaotalk-black.png"}
+                  width={25}
+                  height={25}
+                />
+                KakaoTalk
+              </Button>
             </form>
           </div>
         </div>
       )) || (
         <div className="flex flex-col gap-4 items-center">
-          <TodoForm />
+          <TodoForm session={session} />
           <TodoList session={session} />
         </div>
       )}

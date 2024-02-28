@@ -2,7 +2,6 @@ import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
 import Github from "next-auth/providers/github"
 import Kakao from "next-auth/providers/kakao"
-import Naver from "next-auth/providers/naver"
 import { connecttoDb } from "./utils"
 import { User } from "./models"
 export const {
