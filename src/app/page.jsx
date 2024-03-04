@@ -31,7 +31,12 @@ const TodoApp = async () => {
                 className="flex flex-row gap-2 font-semibold"
                 variant="secondary"
               >
-                <Image src={"/github-mark.png"} width={25} height={25} />
+                <Image
+                  src={"/github-mark.png"}
+                  alt="github-logo"
+                  width={25}
+                  height={25}
+                />
                 Github
               </Button>
             </form>
@@ -40,7 +45,12 @@ const TodoApp = async () => {
                 className="flex flex-row gap-2 font-semibold"
                 variant="outline"
               >
-                <Image src={"/gmail.png"} width={25} height={25} />
+                <Image
+                  src={"/gmail.png"}
+                  alt="google-logo"
+                  width={25}
+                  height={25}
+                />
                 Google
               </Button>
             </form>
@@ -48,6 +58,7 @@ const TodoApp = async () => {
               <Button className="flex flex-row gap-2 font-semibold">
                 <Image
                   src={"/logo-kakaotalk-black.png"}
+                  alt="kakao-logo"
                   width={25}
                   height={25}
                 />
