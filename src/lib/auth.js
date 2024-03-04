@@ -24,7 +24,7 @@ export const {
       clientSecret: process.env.KAKAO_CLIENT_SECRET,
     }),
   ],
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async signIn({ user, account, profile }) {
       if (account.provider === "google") {
