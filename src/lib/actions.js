@@ -4,7 +4,6 @@ import { Todo } from "./models"
 import { connecttoDb } from "./utils"
 import { auth, signIn, signOut } from "./auth"
 import { getUser } from "./data"
-import { redirect } from "next/dist/server/api-utils"
 
 export const addTodo = async (formData) => {
   //Get user
