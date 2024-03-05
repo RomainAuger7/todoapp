@@ -23,7 +23,8 @@
     "react-dom": "^18",
     "shadcn-ui": "^0.8.0",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vercel": "^33.5.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
