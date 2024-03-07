@@ -17,7 +17,7 @@ const getData = async () => {
 
 const TodoList = async ({ session }) => {
   const user = await getUser(session.user.email)
-  const activeUserId = user[0]._id
+  const activeUserId = user[0]?._id
 
   const todos = await getData()
   const displayTodos = todos.filter(

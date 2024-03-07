@@ -5,7 +5,6 @@ import {
   handleGithubLogin,
   handleGoogleLogin,
   handleKakaoLogin,
-  handleLogout,
 } from "@/lib/actions"
 import { auth } from "@/lib/auth"
 import Image from "next/image"
