@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem"
 import { getUser } from "@/lib/data"
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/todos", {
+  const res = await fetch("https://todoapp-indol-two.vercel.app/api/todos", {
     next: { revalidate: 3600 },
   })
 
