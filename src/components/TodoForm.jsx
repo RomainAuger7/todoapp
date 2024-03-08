@@ -20,7 +20,7 @@ const TodoForm = ({ session }) => {
 
   return (
     <div className="flex flex-row items-center bg-foreground rounded-lg p-3 justify-center">
-      <form className="sm:max-w-sm" onSubmit={handleSubmit} action={addTodo}>
+      <form onSubmit={handleSubmit} action={addTodo}>
         <input
           type="text"
           name="content"
