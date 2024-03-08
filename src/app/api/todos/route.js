@@ -12,3 +12,5 @@ export const GET = async () => {
     throw new Error("Failed to fetch todos!")
   }
 }
+
+export const dynamic = "force-dynamic"
