@@ -6,7 +6,7 @@ import { getUser } from "@/lib/data"
 const getData = async () => {
   const res = await fetch(process.env.API_URL_TODOS, {
     cache: "no-store",
-    next: { revalidate: 0 },
+    next: { tags: ["posts"] },
   })
 
   if (!res.ok) {

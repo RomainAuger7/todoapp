@@ -20,7 +20,8 @@ export const addTodo = async (formData) => {
       userId,
     })
     await newTodo.save()
-    revalidatePath("/")
+    // revalidatePath("/")
+    revalidateTag("posts")
     console.log("Saved to database")
   } catch (err) {
     console.log(err)
@@ -32,7 +33,8 @@ export const deleteTodo = async (id) => {
   try {
     connecttoDb()
     await Todo.findOneAndDelete({ _id: id })
-    revalidatePath("/")
+    // revalidatePath("/")
+    revalidateTag("posts")
     console.log("Deleted from database")
   } catch (err) {
     console.log(err)
