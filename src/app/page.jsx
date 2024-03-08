@@ -14,7 +14,7 @@ const TodoApp = async () => {
   const session = await auth()
 
   return (
-    <div className="min-h-lvh flex flex-col items-center justify-center bg-purple-100 font-mono gap-10">
+    <div className="min-h-lvh p-5 flex flex-col items-center justify-center bg-purple-100 font-mono gap-10">
       <h1 className="text-4xl font-bold text-primary outline romainauger7/holy-music outline-none bg-black rounded-xl p-5">
         WhatToDoToday?
       </h1>

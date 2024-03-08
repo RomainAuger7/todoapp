@@ -19,7 +19,7 @@ const TodoForm = ({ session }) => {
   }
 
   return (
-    <div className="flex flex-row items-center bg-foreground rounded-lg p-3 justify-center">
+    <div className="flex flex-row items-center bg-foreground rounded-lg p-3 justify-center sm:flex-col">
       <form onSubmit={handleSubmit} action={addTodo}>
         <input
           type="text"
