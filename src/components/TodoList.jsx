@@ -5,7 +5,7 @@ import { getUser } from "@/lib/data"
 
 const getData = async () => {
   const res = await fetch(process.env.API_URL_TODOS, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 0 },
   })
 
   if (!res.ok) {
